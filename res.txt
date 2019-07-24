@@ -1,0 +1,14 @@
+https://docs.scylladb.com/kb/memory-usage/
+/etc/sysconfig/scylla-server
+
+https://docs.scylladb.com/architecture/sstable/sstable2/sstable-compression/#chunked-compression-of-data-file
+
+Jul 19 16:45:33 sfx-10-202 scylla[20625]:  [shard 0] init - Only 84 MiB per shard; this is below the recommended minimum of 1 GiB/shard; termin
+Jul 19 16:45:33 sfx-10-202 scylla[20625]:  [shard 0] seastar - Exiting on unhandled exception: std::runtime_error (configuration (memory per sh
+Jul 19 16:45:33 sfx-10-202 systemd[1]: scylla-server.service: main process exited, code=exited, status=1/FAILURE
+Jul 19 16:45:33 sfx-10-202 systemd[1]: Failed to start Scylla Server.
+
+SCYLLA_ARGS="--log-to-syslog 1 --log-to-stdout 1 --default-log-level info --network-stack posix --memory 2G"
+
+ttps://github.com/scylladb/scylla-ami/issues/15
+https://github.com/scylladb/scylla/issues/1846
